@@ -1,0 +1,44 @@
+{
+  "name": "koa-reqlog",
+  "version": "1.0.0",
+  "description": "Simple middleware for view logs in KoaJS@2",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "node_modules/.bin/parcel build src/app.* --out-dir dist/ --no-source-maps",
+    "watch": "node_modules/.bin/parcel watch src/app.* --out-dir dist/ --no-source-maps --no-hmr"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mazahell/koa-reqlog.git"
+  },
+  "keywords": [
+    "koa",
+    "json",
+    "logs",
+    "form"
+  ],
+  "author": {
+    "name": "Serhiy Arendarchuk",
+    "email": "ipmazahell@gmail.com",
+    "url": "https://github.com/mazahell"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mazahell/koa-reqlog#readme",
+  "dependencies": {
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "koa": "^2.6.1",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "lodash.find": "^4.6.0",
+    "lodash.map": "^4.6.0",
+    "mocha": "^5.2.0",
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.14.3",
+    "should": "^13.2.3",
+    "supertest": "^3.3.0"
+  }
+}

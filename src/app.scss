@@ -1,0 +1,142 @@
+$methods: (GET: #0f6ab4, POST: #10a54a, PUT: #c5862b, PATCH: #d38042, DELETE: #a41e22);
+body {
+  background-color: #ccc;
+}
+pre {
+  border: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 6px 12px;
+  background: transparent;
+  overflow: auto;
+  max-height: 400px;
+  width: 100%;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.list-requests-ids {
+  list-style: none;
+}
+
+.list-requests-ids li {
+  cursor: pointer;
+  background-color: #ccc;
+  padding: 0 3px 0 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.list-requests-ids li .list-requests-ids__info-block {
+  color: white;
+  font-size: .7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+@each $method, $bgcolor in $methods {
+  .list-requests-ids li[m-type=#{$method}] {
+    background-color: lighten(desaturate(adjust-hue($bgcolor, -5), 39.16), 55.29);
+    .list-requests-ids__info-block {
+      background-color: #{$bgcolor};
+    }
+  }
+  h4[m-type=#{$method}] {
+    background-color: #{$bgcolor};
+    padding: 0 12px;
+    color: white;
+    font-size: 24px;
+  }
+  .request-uri[m-type=#{$method}] {
+    display: flex;
+    font-size: .7em;
+    background-color: lighten(desaturate(adjust-hue($bgcolor, -5), 39.16), 55.29);
+    border: 1px solid #{$bgcolor};
+    .method[m-type=#{$method}] {
+      color: white;
+      background-color: #{$bgcolor};
+      padding: 0 3px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .uri[m-type=#{$method}] {
+      
+      padding: 0 6px;
+      font-size: 16px;
+      color: black;
+    }
+  }
+}
+
+.list-requests-ids li:hover {
+  cursor: pointer;
+  background-color: white;
+}
+
+.list-requests-ids__info-block {
+  display: block;
+  width: 60px;
+}
+
+aside {
+  padding: 1px;
+}
+
+aside input.search {
+  border-color: white;
+  background-color: white;
+  border-radius: 0;
+  &:focus {
+    border-color: transparent;
+  }
+}
+
+main {
+  background-color: white;
+  h2 {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .date {
+      font-size: 14px;
+    }
+  }
+  .data-container {
+    margin: 10px 0;
+    border: 1px solid #E0E0E0;
+    font-size: 14px;
+    h4 {
+      color: white;
+      background-color: #607D8B;
+      padding: 6px 10px;
+      margin: 0;
+    }
+    .key-value {
+      display: flex;
+      color: #212121;
+      
+      .columnNoWrap {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      &:nth-child(odd) {
+        background-color: #ececec;
+      }
+    }
+  }
+}
