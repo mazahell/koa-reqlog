@@ -1,6 +1,6 @@
 {
   "name": "koa-reqlog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple middleware for view logs in KoaJS@2",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
-    "koa": "^2.6.1",
+    "koa": "^2.6.2",
     "koa-bodyparser": "^4.2.1",
     "koa-json": "^2.0.2",
     "koa-router": "^7.4.0",
