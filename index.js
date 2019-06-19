@@ -36,6 +36,7 @@ module.exports = ({ url = '/request-log', lastItems = 20 }) => async (ctx, next)
       title: 'Request-Logger v1.0.0',
       requests: JSON.stringify([...requests].reverse())
     });
+  } else {
+    await next();
   }
-  await next();
 };

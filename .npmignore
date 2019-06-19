@@ -3,3 +3,4 @@ npm-debug.log
 .cache
 src
 package-lock.json
+.idea
