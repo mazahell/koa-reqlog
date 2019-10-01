@@ -39,7 +39,7 @@ const PreviewComponent = {
           ])
         ])
       ]),
-      m('.data-container', { class: Object.keys(response).length ? '' : 'hidden' }, [
+      m('.data-container', { class: response !== undefined && response !== '' ? '' : 'hidden' }, [
         m('h4', 'Response Body'),
         m('.key-value', [
           m('pre', JSON.stringify(response, null, 2))

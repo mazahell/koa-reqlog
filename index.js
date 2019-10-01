@@ -23,7 +23,7 @@ module.exports = ({ url = '/request-log', lastItems = 20 }) => async (ctx, next)
         header,
         requestHeaders,
         body,
-        response: responseBody || '',
+        response: responseBody !== undefined ? responseBody : '',
         requestedAt: new Date()
       });
       requests.splice(0, requests.length - lastItems);
