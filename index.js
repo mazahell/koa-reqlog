@@ -4,11 +4,13 @@ const pug = require('pug');
 const requests = [];
 
 module.exports = ({ url = '/request-log', lastItems = 20, ignore = [] }) => async (ctx, next) => {
-  const sameUrl = ctx.request.path.trim() === url.trim();
+  const path = ctx.request.path.trim();
+  const sameUrl = path === url.trim();
+  const shouldIgnore = ignore.some(igRegex => path.match(igRegex))
   const requestId = crypto.randomBytes(4).toString('hex');
   ctx.set('x-request-id', requestId);
   ctx.res.once('finish', () => {
-    if (!sameUrl) {
+    if (!sameUrl && !shouldIgnore) {
       const { method, body } = ctx.request;
       const { body: responseBody } = ctx.response;
       const { _headers: header, statusCode } = ctx.res;
