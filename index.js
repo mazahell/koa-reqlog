@@ -3,7 +3,7 @@ const pug = require('pug');
 
 const requests = [];
 
-module.exports = ({ url = '/request-log', lastItems = 20 }) => async (ctx, next) => {
+module.exports = ({ url = '/request-log', lastItems = 20, ignore = [] }) => async (ctx, next) => {
   const sameUrl = ctx.request.path.trim() === url.trim();
   const requestId = crypto.randomBytes(4).toString('hex');
   ctx.set('x-request-id', requestId);
