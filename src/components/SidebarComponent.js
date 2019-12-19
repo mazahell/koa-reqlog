@@ -10,6 +10,7 @@ const SidebarCompponent = {
   selectIdx(idx) {
     m.route.param('idx', idx);
     m.route.set(`/${idx}`);
+    $('html, body').animate({ scrollTop: 0 }, 'fast');
   },
   view() {
     const { q } = this;
