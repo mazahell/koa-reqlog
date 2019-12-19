@@ -1,5 +1,5 @@
 # koa-reqlog 
-[![Build Status](https://travis-ci.org/mazahell/koa-reqlog.svg?branch=master)](https://travis-ci.org/mazahell/koa-reqlog)
+[![Build Status](https://travis-ci.org/asergey87/koa-reqlog.svg?branch=master)](https://github.com/asergey87/koa-reqlog)
 > Simple middleware for view logs in KoaJS@2.
 
 ## Install
